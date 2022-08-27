@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Relógio</title>
+</head>
+<body>
+	<main>
+		<div id='relogio'>
+			<div class='caixa' id='hora'>Horas
+				<div class='ncaixa' id='nhora'></div>
+			</div>
+			<div class='caixa' id='minuto'>Minutos
+				<div  class='ncaixa' id='nmin'></div>
+			</div>
+			<div class='caixa' id='segundo'>Segundos
+				<div class='ncaixa' id='nsec'></div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		CRIADO POR WESLEY
+	</footer>
+	<script>
+		var hthora=document.getElementById('nhora')
+		var htmin=document.getElementById('nmin')
+		var htsec=document.getElementById('nsec')
+		const relogio=new Date()
+		const hora=relogio.getHours()
+		const min=relogio.getMinutes()
+		const sec=relogio.getSeconds()
+		hthora.textContent=hora
+		htmin.textContent=min
+		htsec.textContent=sec
+
+		alert(hora)
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
