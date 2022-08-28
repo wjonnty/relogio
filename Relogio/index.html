@@ -7,35 +7,64 @@
 	<title>Relógio</title>
 </head>
 <body>
-	<main>
-		<div id='relogio'>
-			<div class='caixa' id='hora'>Horas
-				<div class='ncaixa' id='nhora'></div>
-			</div>
-			<div class='caixa' id='minuto'>Minutos
-				<div  class='ncaixa' id='nmin'></div>
-			</div>
-			<div class='caixa' id='segundo'>Segundos
-				<div class='ncaixa' id='nsec'></div>
-			</div>
-		</div>
-	</main>
-	<footer>
-		CRIADO POR WESLEY
-	</footer>
-	<script>
-		var hthora=document.getElementById('nhora')
-		var htmin=document.getElementById('nmin')
-		var htsec=document.getElementById('nsec')
-		const relogio=new Date()
-		const hora=relogio.getHours()
-		const min=relogio.getMinutes()
-		const sec=relogio.getSeconds()
-		hthora.textContent=hora
-		htmin.textContent=min
-		htsec.textContent=sec
+	<div class='relogio'>
 
-		
+		<div>
+			<span class="tempos" id="horas">00</span>
+			<span class="tempo">Horas</span>
+		</div>
+
+		<div>
+			<span class="tempos" id="min">00</span>
+			<span class="tempo">Minutos</span>
+		</div>
+
+		<div>
+			<span class="tempos" id="seg">00</span>
+			<span class="tempo">Segundos</span>
+		</div>
+
+	</div>
+	<script>
+		const hthour=document.getElementById('horas')
+		const htmin=document.getElementById('min')
+		const htsec=document.getElementById('seg')
+	
+		const relogio= setInterval(function time(){
+			let tempo= new Date()
+			let hr= tempo.getHours()
+			let min= tempo.getMinutes()
+			let sec= tempo.getSeconds()
+
+			if(hr<10){
+				hr='0'+hr
+			}
+			if(min<10){
+				min='0'+min
+			}
+			if(sec<10){
+				sec='0'+sec
+			}
+			if (hr>=18) {
+				document.body.style.background='linear-gradient(120deg,blue,black)'
+				
+
+			}else if (hr>=6 && hr<18){
+				document.body.style.background='linear-gradient(120deg,yellow,orange)'
+
+			}
+
+
+			hthour.textContent=hr			
+			htmin.textContent=min
+			htsec.textContent=sec
+
+
+
+
+
+
+		})
 
 
 
